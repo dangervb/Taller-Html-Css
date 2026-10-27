@@ -1,0 +1,141 @@
+/* 1. Ajustes generales */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #243247;
+  background-color: #fff8e7; /* Cambio 1: fondo solicitado */
+  line-height: 1.6;
+}
+
+/* Mejora de accesibilidad: enlace para saltar directamente al contenido */
+.salto-contenido {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 10;
+  background: #ffffff;
+  color: #173b67;
+  padding: 10px 14px;
+  border: 2px solid #173b67;
+  border-radius: 6px;
+}
+
+.salto-contenido:focus {
+  left: 8px;
+}
+
+/* 2. Encabezado */
+.encabezado {
+  background-color: #512da8; /* Cambio 2: color del encabezado */
+  color: white;
+  text-align: center;
+  padding: 36px 20px;
+}
+
+.encabezado h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.encabezado p {
+  margin: 0;
+}
+
+/* 3. Contenido principal */
+.contenedor {
+  width: min(900px, 92%);
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr; /* Cambio 5: una columna siempre */
+  gap: 20px;
+}
+
+/* 4. Tarjetas */
+.tarjeta {
+  background-color: white;
+  padding: 32px; /* Cambio 3 */
+  border: 1px solid #d9e1eb;
+  border-radius: 20px; /* Cambio 4 */
+  box-shadow: 0 4px 12px rgba(20, 40, 70, 0.08);
+}
+
+.tarjeta h2 {
+  color: #176b73;
+  margin-top: 0;
+}
+
+.tarjeta p {
+  font-size: 1.05rem; /* Cambio 6 */
+}
+
+.enlace {
+  display: inline-block;
+  margin-top: 8px;
+  color: #1456a0;
+  font-weight: bold;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.enlace:hover {
+  color: #512da8; /* Cambio 7: cambia de color al pasar el puntero */
+  text-decoration: underline;
+}
+
+.enlace:focus-visible {
+  outline: 3px solid #512da8;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.texto-externo {
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+/* 5. Pie de página */
+.pie {
+  text-align: center;
+  padding: 18px;
+  background-color: #dfe8f2;
+  color: #33465c;
+}
+
+.pie p {
+  margin: 0;
+}
+
+/* 6. Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  .encabezado {
+    padding: 28px 16px;
+  }
+
+  .encabezado h1 {
+    font-size: 1.6rem;
+  }
+
+  .contenedor {
+    width: 92%;
+    margin: 20px auto;
+    gap: 16px;
+  }
+
+  .tarjeta {
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
